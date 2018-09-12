@@ -1,17 +1,36 @@
+const filterAlphaNumericOnly = (word) =>
+  word.split('').filter(c => {
+    const code = c.charCodeAt(0)
+    return (code > 47 && code < 58) || 
+      (code > 64 && code < 91) ||
+      (code > 96 && code < 123)
+  }).join('')
+
+const capitalizeWord = (word) => 
+  word.split('').map((letter, index) =>
+    (index === 0) ? letter.toUpperCase() : letter
+  ).join('')
+
 var code = {
     // Returns "Hello World!"
     helloWorld: function() {
-        throw new Error("Not Implemented");
+      return 'Hello World!'
     },
-
     // Take a single-spaced <sentence>, and capitalize every <n>th word starting with <offset>.
     capitalizeEveryNthWord: function(sentence, offset, n) {
-        throw new Error("Not Implemented");
+      return sentence
+        .split(' ')
+        .filter(filterAlphaNumericOnly)
+        .slice(offset)
+        .map((word, index) => {
+          return (index % n == 0) ? capitalizeWord(word) : word 
+        })
+        .join(' ')
     },
     
     // Determine if a number is prime
     isPrime: function(n) {
-        throw new Error("Not Implemented");
+        throw new rror("Not Implemented");
     },
     
     // Calculate the golden ratio.
