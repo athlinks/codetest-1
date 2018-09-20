@@ -22,7 +22,24 @@ var code = {
     
     // Determine if a number is prime
     isPrime: function(n) {
-        throw new Error("Not Implemented");
+        // We only need to check upto the sqroot of a number to determine primality
+        var maxCheck = Math.floor(Math.sqrt(n)) + 1;
+        var isPrime = true;
+
+        // numbers less than or eqaul to 1, and even numbers [except 2] are not prime 
+        if(n <= 1 || (n % 2 === 0 && n !== 2)) {
+            isPrime = false;
+        }
+
+        // we only need to check odd numbers
+        for(var i = 3; i <= maxCheck; i += 2) {
+            if(n % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        return isPrime;
     },
     
     // Calculate the golden ratio.
