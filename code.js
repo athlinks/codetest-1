@@ -73,10 +73,42 @@ var code = {
         return ratio;
     },
 
+    fibCache: {},
+
     // Give the nth Fibonacci number
     // Starting with 0, 1, 1, 2, ... a Fibonacci number is the sum of the previous two.
     fibonacci: function(n) {
-        throw new Error("Not Implemented");
+        // Binet's Formula
+        /*
+        var sqrt5 = Math.sqrt(5);
+
+        var Phi = (1 + sqrt5) / 2;
+        var phi = (1 - sqrt5) / 2;
+
+        var fib = Math.round((Math.pow(Phi, n) - Math.pow(phi, n)) / sqrt5)
+
+        return fib;
+        */
+
+        // Memoize version
+
+        if(n < 1) {
+            return 0;
+        }
+
+        if(n <= 2) {
+            return 1;
+        }
+
+        if(n in this.fibCache) {
+            return this.fibCache[n];
+        }
+
+        var val = this.fibonacci(n - 1) + this.fibonacci(n - 2);
+
+        this.fibCache[n] = val;
+
+        return val;
     },
 
     // Give the square root of a number
