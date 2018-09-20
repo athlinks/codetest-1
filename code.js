@@ -115,7 +115,42 @@ var code = {
     // Using a binary search algorithm, search for the square root of a given number.
     // Do not use the built-in square root function.
     squareRoot: function(n) {
-        throw new Error("Not Implemented");
+        var start = 0;
+        var end = n;
+        var mid = 0;
+        var mid2 = 0;
+        var res = 0;
+        var inc = 0.1;
+
+        while(start <= end) {
+            mid = Math.floor((start + end) / 2);
+            mid2 = mid * mid;
+
+            if(mid2 === n) {
+                res = mid;
+                break;
+            }
+
+            if(mid2 < n) {
+                start = mid + 1;
+                res = mid;
+            } else {
+                end = mid - 1;
+            }
+            
+        }
+
+        // calculate the decimal to 5 points of precision
+        for(i = 0; i < 5; i++) {
+            while(res * res <= n) {
+                res += inc;
+            }
+            res = res - inc;
+            inc  = inc / 10;
+        }
+
+        return parseFloat(res.toFixed(5));
+
     }
 };
 module.exports = code;
