@@ -8,6 +8,10 @@ var code = {
     capitalizeEveryNthWord: function(sentence, offset, n) {
         var sen = sentence.split(' ');
 
+        if(offset < 0) {
+            offset += sen.length;
+        }
+
         // Error checking
         if(offset > sen.length || n <= 0 || offset < 0) {
             return sentence;

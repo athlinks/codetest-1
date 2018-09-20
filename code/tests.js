@@ -8,6 +8,10 @@ var tests = {
         var sentence = "Lorem ipsum dolor sit amet";
         assert.areEqual("Lorem ipsum Dolor sit Amet", code.capitalizeEveryNthWord(sentence, 0, 2));
         assert.areEqual("Lorem ipsum Dolor Sit Amet", code.capitalizeEveryNthWord(sentence, 2, 1));
+        assert.areEqual("Lorem ipsum dolor sit amet", code.capitalizeEveryNthWord(sentence, 0, -1));
+        assert.areEqual("Lorem ipsum dolor sit amet", code.capitalizeEveryNthWord(sentence, 10, 1));
+        assert.areEqual("Lorem ipsum dolor Sit Amet", code.capitalizeEveryNthWord(sentence, -2, 1));
+        assert.areEqual("Lorem ipsum dolor sit amet", code.capitalizeEveryNthWord(sentence, -20, 1));
     },
     isPrimeTest: function() {
         assert.isFalse(code.isPrime(-1), "IsPrime(-1) should be false.");
