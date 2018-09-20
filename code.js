@@ -49,7 +49,28 @@ var code = {
     // Let e = c + d, then the ratio e / d is closer to the golden ratio.
     // If you continue this process, the result will trend towards the golden ratio.
     goldenRatio: function(a, b) {
-        throw new Error("Not Implemented");
+        var precision = 5;
+        var error = '.00005';
+        
+        var tempX = a;
+        var tempY = b;
+        var tempZ = a + b;
+        var ratio = 0;
+        var oldRatio = -1;
+
+        while(true) {
+            tempX = tempY;
+            tempY = tempZ;
+            tempZ = tempX + tempY;
+            ratio = (tempZ / tempY).toFixed(precision);
+
+            if(Math.abs(ratio - oldRatio) < error) {
+                break;
+            } else {
+                oldRatio = ratio;
+            }
+        }
+        return ratio;
     },
 
     // Give the nth Fibonacci number
