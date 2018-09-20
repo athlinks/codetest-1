@@ -126,6 +126,10 @@ var code = {
         var res = 0;
         var inc = 0.1;
 
+        if(n === -1) {
+            return 'i';
+        }
+
         while(start <= end) {
             mid = Math.floor((start + end) / 2);
             mid2 = mid * mid;
