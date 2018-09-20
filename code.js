@@ -6,7 +6,18 @@ var code = {
 
     // Take a single-spaced <sentence>, and capitalize every <n>th word starting with <offset>.
     capitalizeEveryNthWord: function(sentence, offset, n) {
-        throw new Error("Not Implemented");
+        var sen = sentence.split(' ');
+
+        // Error checking
+        if(offset > sen.length || n <= 0 || offset < 0) {
+            return sentence;
+        }
+
+        for(var i = offset; i < sen.length; i += n) {
+            sen[i] = sen[i].charAt(0).toUpperCase() + sen[i].slice(1);
+        }
+
+        return sen.join(' ');
     },
     
     // Determine if a number is prime
