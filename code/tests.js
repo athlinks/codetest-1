@@ -49,8 +49,11 @@ var tests = {
     goldenRatioTest: function() {
         assert.isInRange(1.61800, 1.61806, code.goldenRatio(1.0, 1.0));
         assert.isInRange(1.61800, 1.61806, code.goldenRatio(100, 6));
+        assert.isInRange(1.61800, 1.61806, code.goldenRatio(-10, -3));
+        assert.isInRange(1.61800, 1.61806, code.goldenRatio(-10, 3));
     },
     fibonacciTest: function() {
+        assert.areEqual(0, code.fibonacci(-1));
         assert.areEqual(0, code.fibonacci(0));
         assert.areEqual(1, code.fibonacci(1));
         assert.areEqual(1, code.fibonacci(2));
