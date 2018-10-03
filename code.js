@@ -64,7 +64,6 @@ var code = {
     // Using a binary search algorithm, search for the square root of a given number.
     // Do not use the built-in square root function.
     // no Math.sqrt()?
-    // Limitation - deals with integers only
     squareRoot: function(num) {
         let low = 0;
         let high = num;
