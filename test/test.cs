@@ -78,10 +78,10 @@ namespace test
         static AutoResetEvent needsBuild = new AutoResetEvent(true);
         static bool EnableCSharp = false;
         static bool EnableFSharp = false;
-        static bool EnableScala = true;
+        static bool EnableScala = false;
         static bool EnableJavaScript = true;
-        static bool EnableJava = true;
-        static bool EnablePHP = true;
+        static bool EnableJava = false;
+        static bool EnablePHP = false;
         
         static void Main(string[] args)
         {
