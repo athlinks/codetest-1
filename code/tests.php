@@ -36,11 +36,11 @@ class Tests {
             941, 947, 953, 967, 971, 977, 983, 991, 997);
 
         for ($i=1; $i<1000; $i++) {
-            if (array_find($i, $primesTo1000) !== false) {
-                Assert::isTrue(Code::isPrime($i), "IsPrime(" + i + ") should be true.");
+            if (array_search($i, $primesTo1000) !== false) {
+                Assert::isTrue(Code::isPrime($i), "IsPrime(" . $i . ") should be true.");
             }
             else {
-                Assert::isFalse(Code::isPrime($i), "IsPrime(" + i + ") should be false.");
+                Assert::isFalse(Code::isPrime($i), "IsPrime(" . $i . ") should be false.");
             }
         }
 

@@ -238,7 +238,7 @@ namespace test
             PrintMenuItem("3", "Scala", EnableScala);
             PrintMenuItem("4", "JavaScript", EnableJavaScript);
             PrintMenuItem("5", "Java", EnableJava);
-            PrintMenuItem("5", "PHP", EnablePHP);
+            PrintMenuItem("6", "PHP", EnablePHP);
             PrintMenuItem("F5", "Rebuild", null);
             Console.WriteLine("".PadRight(Console.BufferWidth));
             Console.CursorLeft = x;
