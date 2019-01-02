@@ -1,4 +1,7 @@
 # Code Test
+## Advice
+- Use Functional paradigms if you can for extra credit
+
 ## Running the test
 - Fork this repository
 - Clone your fork: `git clone https://github.com/<your github username>/codetest-1.git`
